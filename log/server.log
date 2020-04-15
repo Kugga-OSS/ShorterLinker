@@ -1,0 +1,26 @@
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:06:45.515Z"}
+{"level":"info","message":"::1 - - [15/Apr/2020:06:07:03 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36\"\n","timestamp":"2020-04-15T06:07:03.607Z"}
+{"level":"info","message":"::1 - - [15/Apr/2020:06:21:41 +0000] \"GET /orange HTTP/1.1\" 404 145 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36\"\n","timestamp":"2020-04-15T06:21:41.978Z"}
+{"level":"info","message":"::1 - - [15/Apr/2020:06:21:46 +0000] \"GET /oranges HTTP/1.1\" 200 21 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36\"\n","timestamp":"2020-04-15T06:21:46.152Z"}
+{"level":"info","message":"::1 - - [15/Apr/2020:06:22:18 +0000] \"GET /apple/1 HTTP/1.1\" 200 28 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36\"\n","timestamp":"2020-04-15T06:22:18.340Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:23:42.508Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:23:58.751Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:24:00.823Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:24:06.242Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:24:27.683Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:24:30.902Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:24:34.038Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:24:37.173Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:24:51.958Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:25:02.232Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:25:04.321Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:25:07.175Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:25:14.008Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:25:20.513Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:25:31.734Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:25:37.158Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:25:57.170Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:27:55.740Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:29:02.615Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:33:05.384Z"}
+{"level":"info","message":"Server started at 3000","timestamp":"2020-04-15T06:33:11.127Z"}
