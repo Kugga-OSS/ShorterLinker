@@ -19,11 +19,13 @@
 		"serve": "cross-env NODE_ENV=development NODE_PATH=src nodemon -e ts -w src -x ts-node --inspect src/app.ts"
 	},
 	"dependencies": {
+		"@types/mysql": "^2.15.10",
 		"@types/redis": "^2.8.17",
 		"body-parser": "^1.18.2",
 		"cross-env": "^5.1.1",
 		"express": "^4.16.2",
 		"morgan": "^1.9.1",
+		"mysql": "^2.18.1",
 		"redis": "^3.0.2",
 		"winston": "^2.4.0"
 	},

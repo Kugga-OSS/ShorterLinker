@@ -10,7 +10,7 @@ for (let i = 0; i < 26; i++) {
     map.push(String.fromCharCode(i + 'a'.charCodeAt(0)));
 }
 
-export function nTo62(num: number): string {
+export function nToBase62(num: number): string {
     let res = '';
     while (num > 0) {
         res += map[num%62];

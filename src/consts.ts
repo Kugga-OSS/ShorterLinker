@@ -1,0 +1,1 @@
+const squenceIdKey : string = 'squenceId@shorterlinker';

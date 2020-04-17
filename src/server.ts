@@ -6,7 +6,7 @@ import * as Morgan from 'morgan';
 import * as Winston from 'winston';
 
 import { settings } from 'settings';
-import { initRoutes } from 'routes';
+import { initRoutes } from 'routes/routeInitializer';
 
 export class Server {
 	public app: Express.Application;
