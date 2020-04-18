@@ -1,6 +1,9 @@
 import * as redis from 'redis';
 import { settings } from 'settings'
 
+/**
+ * 为什么只用一条连接 https://stackoverflow.com/questions/21976270/node-js-redis-connection-pooling
+ */
 export class RedisTool {
     public static redisclient: redis.RedisClient;
 

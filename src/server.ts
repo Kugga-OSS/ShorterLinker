@@ -11,7 +11,6 @@ import { initRoutes } from 'routes/routeInitializer';
 export class Server {
 	public app: Express.Application;
 	public log: Winston.LoggerInstance;
-	public router: Express.Router;
 
 	constructor() {
 		this.app = Express();
