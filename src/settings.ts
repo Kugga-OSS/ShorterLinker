@@ -7,6 +7,7 @@ export const settings = {
 	PUBLIC_PATH: process.env.PUBLIC_PATH || Path.resolve(__dirname, '../public'),
 	REDIS_PORT: Number(process.env.REDIS_PORT) || 6379,
 	REDIS_HOST: process.env.REDIS_HOST || '119.23.240.115',
+	REDIS_PASS: process.env.REDIS_PASS || '123',
 	MYSQL_PORT: Number(process.env.MYSQL_PORT) || 3307,
 	MYSQL_HOST: process.env.MYSQL_HOST || '119.23.240.115',
 	MYSQL_USER: process.env.MYSQL_USER || 'root',

@@ -21,7 +21,9 @@ export const redirect = (request: Express.Request, response: Express.Response) =
     mysqlClient.pool.getConnection((err, conn) => {
         if (err) throw err;
         conn.query(selectOriginLinkSql, [request.params.base62url], (err, res: Array<LongLink>) => {
+            console.log(res);
             if (res.length == 0) {
+                console.log(111);
                 response.send({'message': 'no such link'});
                 return ;
             } else {

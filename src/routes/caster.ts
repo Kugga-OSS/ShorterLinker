@@ -25,10 +25,11 @@ const getLastInsertIdSQL = 'select last_insert_id() as id';
 const insertRecordSQL = 'insert into kugga_links(longer_link, shorter_link) values(?, ?)'
 
 /**
- *  POST body { longerLink: ''}
+ *  POST body { longLink: ''}
  * @description 将长网址转化为短网址，短网址的格式xx.xx/10进制数据库主键，转化为62进制的字符串 
  * @param request  
  * @param res 
+ * @todo 1. 入参错误处理
  */
 export const l2s = (request: Express.Request, response: Express.Response) => {
     const body: l2sBody = request.body;
