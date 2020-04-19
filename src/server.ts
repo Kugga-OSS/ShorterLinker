@@ -1,7 +1,7 @@
 import * as Path from 'path';
 
 import * as BodyParser from 'body-parser';
-import * as Express from 'express';
+import * as express from 'express';
 import * as Morgan from 'morgan';
 import * as Winston from 'winston';
 
@@ -9,11 +9,12 @@ import { settings } from 'settings';
 import { initRoutes } from 'routes/routeInitializer';
 
 export class Server {
-	public app: Express.Application;
+	public app: express.Application;
 	public log: Winston.LoggerInstance;
+	public router: express.Router
 
 	constructor() {
-		this.app = Express();
+		this.app = express();
 		this.setLogger();
 		this.setConfig();
 		this.setRoutes();
@@ -25,12 +26,13 @@ export class Server {
 	}
 
 	private setConfig() {
-		this.app.use('/', Express.static(settings.PUBLIC_PATH));
 		this.app.use(BodyParser.json());
 	}
 
 	private setRoutes() {
-		initRoutes(this.app);
+		this.router = express.Router();
+		initRoutes(this.router);
+		this.app.use('/', this.router);
 	}
 
 	private setLogger() {

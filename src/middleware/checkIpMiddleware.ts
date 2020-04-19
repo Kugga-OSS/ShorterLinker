@@ -17,7 +17,7 @@ interface ipRecord {
  * @param next 
  * @todo 黑名单封禁
  */
-export const banIp = (request: Express.Request, response: Express.Response, next: Express.NextFunction) => {
+export const banIp = (request: Express.Request, response: Express.Response, next: any) => {
     // console.log(request.connection.remoteAddress);
     // 因为是通过nginx转发，所以需要记录转发前的远程ip地址，否则全部都是localhost
     // console.log(request.headers[nginxPassHeader]);
@@ -43,9 +43,10 @@ function checkIp(ip: string, next: Express.NextFunction) {
             // 要是不是同一分钟，那么一定不符合限流要求，放开次数限制，更新时间
             if (curTime.getMinutes() !== prevTime.getMinutes() || curTime.getHours() !== prevTime.getHours() || curTime.getDay() !== prevTime.getDay()) {
                 conn.hmset(ip, 'lastVisitTime', String(curTime), 'time', 1);
-                log.info(`@pass: pass ip ${ip} , time ${time}`);
+                log.info(`@pass : pass ip ${ip} , time ${time}`);
                 next();
             } else {
+                // 次数未达到限制
                 if (time < 60) {
                     conn.hmset(ip, 'time', time + 1);
                     log.info(`@pass : pass ip ${ip} , time ${time}`);

@@ -67,5 +67,7 @@ export const l2s = (request: Express.Request, response: Express.Response) => {
                 conn.commit();
             }
         })
+        // 释放连接
+        conn.release();
     })
 }

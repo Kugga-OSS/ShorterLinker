@@ -21,9 +21,7 @@ export const redirect = (request: Express.Request, response: Express.Response) =
     mysqlClient.pool.getConnection((err, conn) => {
         if (err) throw err;
         conn.query(selectOriginLinkSql, [request.params.base62url], (err, res: Array<LongLink>) => {
-            console.log(res);
             if (res.length == 0) {
-                console.log(111);
                 response.send({'message': 'no such link'});
                 return ;
             } else {
@@ -33,5 +31,7 @@ export const redirect = (request: Express.Request, response: Express.Response) =
                 log.info(`rediect id : ${request.params.base62url} to ${res[0].longer_link}`)               
             }
         })
+        // 释放连接
+        conn.release();
     })
 }
