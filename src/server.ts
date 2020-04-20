@@ -26,6 +26,7 @@ export class Server {
 	}
 
 	private setConfig() {
+		this.app.use(express.static('public'))
 		this.app.use(BodyParser.json());
 	}
 

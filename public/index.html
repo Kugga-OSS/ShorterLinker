@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHORTERLINKER-短链接生成器</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            background: greenyellow;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bolder;
+        }
+
+        .mid {
+            width: 80%;
+            height: 300px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            margin-top: 10%;
+            text-align: center;
+            align-items: center;
+        }
+
+        .ipt {
+            width: 80%;
+            height: 3rem;
+            border: 1px solid #f6f6f6;
+            font-size: 1.8rem;
+            border-radius: 100rem;
+            text-align: center;
+            outline: none;
+            margin-top: 20px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            width: 200px;
+            height: 3rem;
+            background: grey;
+            border-radius: 100px;
+            line-height: 3rem;
+            user-select: none;
+            cursor: pointer;
+            position: relative;
+            opacity: 0.8;
+        }
+
+        .btn:hover {
+            opacity: 1;
+        }
+
+        .btn:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            background: #f0f0f0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            border-radius: 100px;
+            transition: all 0.5s;
+        }
+
+        .btn:active:after {
+            top: 50%;
+            left: 50%;
+            content: '';
+            width: 0;
+            height: 0;
+            opacity: 0.4;
+            transition: all 0s;
+        }
+
+        .w80 {
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mid">
+        <div>
+            <p style="font-size: 2rem;">SHORTERLINKER-短链接生成器</p>
+        </div>
+        <div class="w80">
+            <input type="input" id="longlink" class="ipt" placeholder="输入长链接">
+        </div>
+        <div class="w80">
+            <input type="input" id="shortlink" class="ipt" placeholder="此处为输出的短链接" placeholder="" readonly>
+        </div>
+        <div class="btn" id="btn">点击生成短链接</div>
+    </div>
+</body>
+
+<script>
+    /**     
+     * 判断是否为url的正则表达式
+    */
+    function judge() {
+        let ipt = document.getElementById('longlink');
+        var re = '(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]';
+        var isUrl = String(ipt.value).match(re);
+        if (!isUrl) {
+            // 拒绝，并显示
+            let out = document.getElementById("shortlink");
+            out.value = '提交的不是合法的URL，请重新输入';
+            return false;
+        }
+        return true;
+    }
+
+    let ipt = document.getElementById('longlink');
+    ipt.addEventListener('change', (event) => {
+        judge();    
+    })
+    $('#btn').click(() => {
+        let out = document.getElementById("shortlink");
+        if (String(ipt.value).length === 0) {
+            out.value = '请输入你的长链接';
+            return ;
+        }
+        if (!judge()) {
+            return ;
+        }
+        $.ajax({
+            type: 'POST',
+            url: 'cast',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: JSON.stringify({longLink: ipt.value}),
+            success: function(data, status) {
+                if (status === 'success') {
+                    out.value = data.shortLink; 
+                }
+            }
+        });
+    });
+</script>
+
+</html>
