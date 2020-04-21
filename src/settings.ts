@@ -1,7 +1,7 @@
 import * as Path from 'path';
 
 export const settings = {
-	SERVER_HOST: process.env.SERVER_HOST || 'http://localhost/',
+	SERVER_HOST: process.env.SERVER_HOST || 'http://localhost',
 	LOG_PATH: process.env.LOG_PATH || Path.resolve(__dirname, '../log'),
 	PORT: process.env.PORT || 3000,
 	REDIS_PORT: Number(process.env.REDIS_PORT) || 6379,

@@ -4,4 +4,8 @@ COPY . /app
 
 WORKDIR /app
 
-RUN npm install && npm run serve
+RUN npm install
+
+ENTRYPOINT ['npm', 'run', 'serve']
+
+EXPOSE 3000
