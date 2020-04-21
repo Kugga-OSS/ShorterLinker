@@ -1,5 +1,5 @@
 import * as Express from 'express';
-import { RedisTool } from 'utils/redisClient';
+import { RedisTool } from 'utils/redisClientHelper';
 import { log } from 'app';
 // import { log } from "app"
 
